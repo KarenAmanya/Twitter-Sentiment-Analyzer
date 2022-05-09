@@ -21,7 +21,7 @@ def generate_code():
 #Json to Database
 def store_tweets():
     try:
-        conn=psycopg2.connect(dbname='Test',user='postgres', password='2006',port=5432)#establish connection with db
+        conn=psycopg2.connect(dbname='',user='', password='',port=5432)#establish connection with db
         cursor=conn.cursor()
         name=f'Account_{generate_code()}' 
         create_script=f""" CREATE TABLE IF NOT EXISTS {name} (
@@ -48,16 +48,12 @@ def store_tweets():
     except Exception as error:
         print(error)
 
-TABLE='Account_58848457'
-
-#Fetch_tweets('coopbankkenya','2022-04-28','2022-04-30')
-#print(store_tweets())
 
 #Get data from df table
 def retrieve_tweets(table_name):
-    conn=psycopg2.connect(dbname='Test',
-    user='postgres',
-    password='2006',
+    conn=psycopg2.connect(dbname='t',
+    user='',
+    password='',
     port=5432)
     cursor=conn.cursor()
 
